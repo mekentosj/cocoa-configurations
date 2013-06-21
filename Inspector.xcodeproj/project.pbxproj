@@ -17,7 +17,6 @@
 		A9403223168B0BA600BCF9C3 /* JKMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9403222168B0BA600BCF9C3 /* JKMainWindow.xib */; };
 		A9403228168B111D00BCF9C3 /* JKOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9403227168B111D00BCF9C3 /* JKOutlineView.m */; };
 		A940322B168B117600BCF9C3 /* JKConfigurationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A940322A168B117600BCF9C3 /* JKConfigurationHeaderView.m */; };
-		A940322E168B133100BCF9C3 /* JKConfigurationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A940322D168B133100BCF9C3 /* JKConfigurationGroup.m */; };
 		A9403231168B1B1000BCF9C3 /* JKConfigurationHeaderRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9403230168B1B1000BCF9C3 /* JKConfigurationHeaderRowView.m */; };
 		A9403234168B1C7E00BCF9C3 /* JKConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A9403233168B1C7E00BCF9C3 /* JKConfiguration.m */; };
 		A9403237168B6D0500BCF9C3 /* FileInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9403236168B6D0500BCF9C3 /* FileInspector.xib */; };
@@ -44,8 +43,6 @@
 		A9403227168B111D00BCF9C3 /* JKOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKOutlineView.m; sourceTree = "<group>"; };
 		A9403229168B117600BCF9C3 /* JKConfigurationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKConfigurationHeaderView.h; sourceTree = "<group>"; };
 		A940322A168B117600BCF9C3 /* JKConfigurationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKConfigurationHeaderView.m; sourceTree = "<group>"; };
-		A940322C168B133100BCF9C3 /* JKConfigurationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKConfigurationGroup.h; sourceTree = "<group>"; };
-		A940322D168B133100BCF9C3 /* JKConfigurationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKConfigurationGroup.m; sourceTree = "<group>"; };
 		A940322F168B1B1000BCF9C3 /* JKConfigurationHeaderRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKConfigurationHeaderRowView.h; sourceTree = "<group>"; };
 		A9403230168B1B1000BCF9C3 /* JKConfigurationHeaderRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKConfigurationHeaderRowView.m; sourceTree = "<group>"; };
 		A9403232168B1C7E00BCF9C3 /* JKConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKConfiguration.h; sourceTree = "<group>"; };
@@ -133,8 +130,6 @@
 		A9403224168B10DC00BCF9C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A940322C168B133100BCF9C3 /* JKConfigurationGroup.h */,
-				A940322D168B133100BCF9C3 /* JKConfigurationGroup.m */,
 				A9403232168B1C7E00BCF9C3 /* JKConfiguration.h */,
 				A9403233168B1C7E00BCF9C3 /* JKConfiguration.m */,
 			);
@@ -234,7 +229,6 @@
 				A9403221168B0B9100BCF9C3 /* JKMainWindowController.m in Sources */,
 				A9403228168B111D00BCF9C3 /* JKOutlineView.m in Sources */,
 				A940322B168B117600BCF9C3 /* JKConfigurationHeaderView.m in Sources */,
-				A940322E168B133100BCF9C3 /* JKConfigurationGroup.m in Sources */,
 				A9403231168B1B1000BCF9C3 /* JKConfigurationHeaderRowView.m in Sources */,
 				A9403234168B1C7E00BCF9C3 /* JKConfiguration.m in Sources */,
 			);
@@ -330,6 +324,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Inspector/Inspector-Prefix.pch";
 				INFOPLIST_FILE = "Inspector/Inspector-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -342,6 +337,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Inspector/Inspector-Prefix.pch";
 				INFOPLIST_FILE = "Inspector/Inspector-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -366,6 +362,7 @@
 				A940321E168B0B6100BCF9C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

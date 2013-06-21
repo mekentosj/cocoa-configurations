@@ -9,7 +9,6 @@
 #import "JKMainWindowController.h"
 
 #import "JKConfiguration.h"
-#import "JKConfigurationGroup.h"
 #import "JKConfigurationHeaderRowView.h"
 
 @interface JKMainWindowController ()

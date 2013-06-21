@@ -4,7 +4,6 @@
 //
 //  Created by Joris Kluivers on 12/26/12.
 //  Copyright (c) 2012 Joris Kluivers. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 
@@ -13,16 +12,29 @@
 @property (strong) NSArray *children;
 @property (strong) NSString *nibName;
 
+@property (strong) NSDictionary *modes;
+@property (copy) NSString *mode;
+
+@property (assign) CGFloat height;
+
 @property (weak) id itemController;
 
-@property (readonly, assign) CGFloat height;
+// you can either pass in a modes dictionary, that then also determine the height for each mode
+// or simply pass in a fixed height
 
-@property (readwrite, strong) NSDictionary *modes;
++ (instancetype)configuration;
++ (instancetype)configurationWithNibName:(NSString *)name height:(CGFloat)height;
++ (instancetype)configurationWithNibName:(NSString *)name modes:(NSDictionary *)modesDictionary;
 
-@property (readwrite, copy) NSString *mode;
+@end
 
-+ (instancetype) configuration;
 
-+ (instancetype) configurationWithNibName:(NSString *)name modes:(NSDictionary *)modesDictionary;
+#pragma mark -
+
+@interface JKConfigurationGroup : JKConfiguration
+
+@property(strong) NSString *title;
+
++ (instancetype)configurationWithTitle:(NSString *)title;
 
 @end

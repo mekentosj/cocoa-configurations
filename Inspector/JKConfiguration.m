@@ -4,58 +4,78 @@
 //
 //  Created by Joris Kluivers on 12/26/12.
 //  Copyright (c) 2012 Joris Kluivers. All rights reserved.
-//
 
 #import "JKConfiguration.h"
 
-@interface JKConfiguration ()
 
-@end
+@implementation JKConfiguration
 
-@implementation JKConfiguration {
-}
+@synthesize height = _height;
 
-- (instancetype) init
+- (instancetype)init
 {
-	self = [super init];
-	if (self) {
+	if (self = [super init])
+    {
 		_children = nil;
 	}
 	return self;
 }
 
-- (instancetype) initWithNibName:(NSString *)name modes:(NSDictionary *)modesDictionary
+- (instancetype)initWithNibName:(NSString *)name height:(CGFloat)height
 {
-	self = [super init];
-	if (self) {
-        
+	if (self = [super init])
+    {        
 		_children = nil;
 		_nibName = name;
-        
-        assert(modesDictionary);
+        _height = height;
+	}
+	return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)name modes:(NSDictionary *)modesDictionary
+{
+	if (self = [super init])
+    {
+		_children = nil;
+		_nibName = name;
         _modes = modesDictionary;
         
+        // default mode
         _mode = @"normal";
 	}
 	return self;
 }
 
-+ (instancetype) configuration
+
++ (instancetype)configuration
 {
 	return [[self alloc] init];
 }
 
-+ (instancetype) configurationWithNibName:(NSString *)name modes:(NSDictionary *)modesDictionary
++ (instancetype)configurationWithNibName:(NSString *)name modes:(NSDictionary *)modesDictionary
 {
 	return [[self alloc] initWithNibName:name modes:modesDictionary];
 }
 
++ (instancetype)configurationWithNibName:(NSString *)name height:(CGFloat)height;
+{
+    return [[self alloc] initWithNibName:name height:height];
+}
+
 - (CGFloat)height
 {
-    assert(_mode);
-    assert(_modes);
-    assert(_modes[_mode][@"height"]);
-    return [_modes[_mode][@"height"] floatValue];
+    // if a modes dictionary is set, return the height from the currently selected mode
+    if (_modes)
+    {
+        return [_modes[_mode][@"height"] floatValue];
+    }
+    
+    return _height;
+}
+
+- (void)setHeight:(CGFloat)height
+{
+    _height = height;
 }
 
 - (NSString *) description
@@ -64,3 +84,31 @@
 }
 
 @end
+
+
+#pragma mark -
+#pragma mark -
+
+@implementation JKConfigurationGroup
+
+- (id)initWithTitle:(NSString *)title
+{
+	if (self = [super init])
+    {
+		_title = title;
+	}
+	return self;
+}
+
++ (id)configurationWithTitle:(NSString *)title
+{
+	return [[self alloc] initWithTitle:title];
+}
+
+- (NSString *)description
+{
+	return [NSString stringWithFormat:@"<%@: %@>", NSStringFromClass([self class]), self.title];
+}
+
+@end
+
