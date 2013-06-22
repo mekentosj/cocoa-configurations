@@ -10,14 +10,12 @@
 
 @implementation JKOutlineView
 
-- (void)drawGridInClipRect:(NSRect)clipRect
-{
+- (void) drawGridInClipRect:(NSRect)clipRect {
 	// no drawing here, no gridlines for empty rows
 }
 
-- (void)drawBackgroundInClipRect:(NSRect)clipRect
-{
-	[[NSColor colorWithCalibratedWhite:0.85 alpha:1.000] set];
+- (void) drawBackgroundInClipRect:(NSRect)clipRect {
+	[[NSColor colorWithDeviceWhite:0.915f alpha:1.0f] set];
 	NSRectFill(clipRect);
 }
 
