@@ -8,6 +8,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface JKConfigurationHeaderRowView : NSTableRowView
+@property (readonly) NSButton *disclosureButton;
 @end
 
 @interface JKConfigurationRowView : NSTableRowView

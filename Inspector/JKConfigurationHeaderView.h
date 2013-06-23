@@ -10,6 +10,8 @@
 
 @interface JKConfigurationHeaderView : NSTableCellView
 
+@property (weak) IBOutlet NSTextField *labelTextField;
+
 @property (strong) NSColor *headerGradientStartColor;
 @property (strong) NSColor *headerGradientEndColor;
 
